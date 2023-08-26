@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meme-generator</title>
+    
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body onload="onInit()">
+
+    <header>
+
+            <img src="logo/logo.png" alt="" class="logo">
+
+            <ul class="navbarlinks">
+
+                <input type="checkbox" id="checkbox_toggle" />
+                <label for="checkbox_toggle" class="hamburger">&#9776;</label>
+                <div class="menu">
+    
+                    <li><a href="">Memes</a></li>
+                    <li><a href="">Gallery</a></li>
+                    <li><a href="">About</a></li>
+    
+                </div>
+            </ul>
+
+    </header>
+
+    <div class="searchbox">
+        <input class="searchtxt" type="text" placeholder="Search">
+    </div>
+
+    <section class="main-gallery"></section>
+
+ 
+    <main class="main-container" style="display: none" >
+
+       <div class="canvas-section">
+          <button class="back-to-galery">&#8592 GALERY</button>
+          <canvas class="canvas-box" width="500" height="500"
+              onmousedown="onCanvasMouseDown(event)"
+              onmousemove="onCanvasMouseMove(event)"
+              onmouseup="onCanvasMouseUp()"></canvas>
+       </div>
+
+    <div class="sidebar">
+
+        <p>Options</p>
+
+        <div class="downloadbtn">
+            <a download="memegen.jpg" id="downloadLink" onclick="downloadCanvas(event, this)">Dowload</a>
+        </div>
+        <div class="uploadbtn">
+            <input type="file" accept="image/*" onchange="handleImageUpload(event)">
+        </div>
+
+        <div class="buttons-section">
+
+            <select class="family-options" onchange="changeFontFamily(this.value)">
+                <option value="Impact">Impact</option>
+                <option value="Arial">Arial</option>
+                <option value="Times New Roman">Times New Roman</option>
+                <option value="Verdana">Verdana</option>
+                <option value="Courier New">Courier New</option>
+            </select>
+
+            <input class="text-input" name="text-input" type="text" placeholder="Enter your text" oninput="handleTextInput(this.value)">
+
+            <input type="color" class="text-color" onchange="changeFontColor(this.value)">
+      
+        
+            <button class="add" onclick="addLine()"><img width="15px" src="ICONS/add.png" alt=""></button>
+            <button class="delite" onclick="onDeleteLineClicked()"><img width="15px" src="ICONS/trash.png" alt=""></button>
+            <button class="up text-button" onclick="onSwitchLineClicked()">
+            <img width="15px" src="ICONS/up-and-down-opposite-double-arrows-side-by-side.png" alt="">
+            </button>
+        
+      
+            <button class="to-left" onclick="alignText('left')" ><img width="15px" src="ICONS/align-to-left.png" alt=""></button>
+            <button class="to-right" onclick="alignText('right')"><img width="15px" src="ICONS/align-to-right.png" alt=""></button>
+            <button class="center" onclick="alignText('center')"><img width="15px" src="ICONS/center-text-alignment.png" alt=""></button>
+            <button class="decrease" onclick="changeFontSize(5)"><img width="15px" src="ICONS/increase font - icon.png" alt=""></button>
+            <button class="increase" onclick="changeFontSize(-5)"><img width="15px" src="ICONS/decrease font - icon.png" alt=""></button>
+            
+        </div>
+
+        <div class="sticker-gallery">
+            <img draggable="true" width="150" height="150" src="sticers/Unknown.png" alt="">
+            <img draggable="true" width="150" height="150" src="sticers/sticker2.png" alt="">
+            <img draggable="true" width="150" height="150" src="sticers/sticker3.png" alt="">
+            <img draggable="true" width="150" height="150" src="sticers/sticker4.png" alt="">
+            <img draggable="true" width="150" height="150" src="sticers/sticker5.png" alt="">
+            <img draggable="true" width="150" height="150" src="sticers/sticker6.png" alt="">
+        </div>
+
+
+
+
+    </div>
+
+    </main>
+
+    <script src="js/utils.js"></script>
+    <script src="js/galery.service.js"></script>
+    <script src="js/galery.controller.js"></script>
+    <script src="js/main.service.js"></script>
+    <script src="js/main.controller.js"></script>
+
+</body>
+</html>

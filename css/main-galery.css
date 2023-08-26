@@ -1,0 +1,24 @@
+.main-gallery {
+    column-count: 6;
+  
+    padding: 0 2.87rem;
+    box-sizing: border-box;
+}
+
+.img-gallery {
+    width: 200px;
+    height: 200px;
+    margin-bottom: 1rem;
+    break-inside: avoid;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    border-radius: 30px;
+}
+
+.img-gallery img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+}

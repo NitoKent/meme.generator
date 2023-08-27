@@ -1,0 +1,19 @@
+@media (max-width: 1400px) {
+    .main-gallery {
+        column-count: 4; 
+    }
+}
+
+@media (max-width: 768px) {
+    .main-gallery {
+        column-count: 2;
+        padding: 0 1rem;
+    }
+    
+    .img-gallery {
+        width: 100%;
+        height: auto;
+        margin-bottom: 1rem;
+        border-radius: 15px;
+    }
+}

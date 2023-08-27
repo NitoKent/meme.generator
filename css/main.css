@@ -2,21 +2,29 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
- 
-  }
-
-body{
-  background-color: #F8F8F8;
-  margin: 0;
-  width: 100%;
+    
 }
 
+body{
+    background-color: #F8F8F8;
+    margin: 0;
+    width: 100%;
+}
+
+p{
+    font-style: Impact, fantasy;
+    font-weight: 900;
+    font-stretch: ultra-expanded;
+    color: #070607;
+    background-color: #fbfbfb;
+   font-size: 1.5em;
+}
 .main-container {
     display: grid;
     margin-top: 1px;
     grid-template-columns: 60% 1fr;
-    gap: 1rem;
-    padding-left: 1.87rem;
+    gap: 5rem;
+    padding-left: 2.87rem;
     box-sizing: border-box;
     height: 90vh;
     background-color: #fff;
@@ -28,7 +36,8 @@ body{
     justify-content: center; 
     align-items: center;     
     background-color: #fff;
-    height: 100%;           
+    height: 90%;       
+        
 }
 
 .back-to-galery {
@@ -70,7 +79,7 @@ body{
     
     color: #070607;
     font-size: 1.5rem;
-    margin-bottom: 50px;
+    margin-bottom: 40px;
    
 }
 .text-color{
@@ -81,19 +90,20 @@ body{
 }
 .buttons-section {
     display: grid;
-    grid-template-columns: repeat(11, 1fr); 
+    grid-template-columns: repeat(12, 1fr); 
     grid-template-rows: auto auto; 
     border-radius: 25px;
     border: 1px solid #F8F8F8;
     max-width: 30.37rem;
     background-color: #fff;
     overflow: hidden;
-    margin-left: 1.875rem;
+    margin-left: 2.875rem;
+   
     align-items: center;
 }
 
 .buttons-section input[type="text"]{
-    border: 4px solid #F8F8F8;
+    border: 7px solid #F8F8F8;
     padding: 2.65rem;
     grid-column: 1 / span 10; 
     outline: none;
@@ -107,9 +117,9 @@ body{
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 100px;
+    width: 60px;
     height: 30px;
-    background-color: #c386c2;
+    background-color: #ebebeb;
     border: 2px solid black;
     border-radius: 10px;
     position: fixed;
@@ -134,7 +144,37 @@ body{
 
 .uploadbtn {
     display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+    border: 1px dashed #aaa;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 30px;
+}
+
+
+.sticker-gallery{
+    display: flex;
     align-items: center;
     justify-content: center;
-    padding: 10px;
+    background-color: rgb(237, 237, 237);
+    border-radius: 40px;
+  
+}
+
+.stickers-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px;
+    height: 100px;
+}
+
+.btn.sticker {
+    font-size: 40px; 
+    border: 2px solid black;
+    border-radius: 10px; 
+    padding: 10px; 
+    margin: 0 10px;
 }

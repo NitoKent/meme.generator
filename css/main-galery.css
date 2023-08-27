@@ -1,6 +1,11 @@
 .main-gallery {
     column-count: 6;
-  
+    padding: 0 2.87rem;
+    box-sizing: border-box;
+}
+
+.main-gallery {
+    column-count: 6;
     padding: 0 2.87rem;
     box-sizing: border-box;
 }
@@ -20,5 +25,5 @@
 .img-gallery img {
     width: 100%;
     height: 100%;
-    object-fit: cover; 
+    object-fit: cover;
 }

@@ -1,15 +1,13 @@
 
-
-
 header {
     display: flex;
     background-color: #989898;
     align-items: center;
     justify-content: space-between;
-    padding: 20px;
+    padding: 40px;
     background-color: #fff;
     color: #989898;
-    box-shadow: 0px 1px 0px #dbdbdb;
+    box-shadow: 0px 5px 0px #dbdbdb;
     height: 100px;
 
 }
@@ -22,16 +20,16 @@ header {
 
 .menu{
     display: flex;
-    gap: 3.125rem;
+    gap: 1.125rem;
 }
 
 a:visited { 
     text-decoration: none; 
-    color: #989898;
+    color: #000000;
 }
 
 a:hover{
-    color: #ad95d9;
+    color: #5900ff;
 }
 
 li{
@@ -55,11 +53,12 @@ input[type=checkbox] {
   }
 
 
-  /* //searchbox// */
-
 .searchbox{
-    margin-top: 2rem;
-    margin-bottom: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
 }
 .searchtxt{
     min-width: 92vw;

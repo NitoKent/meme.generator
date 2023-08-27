@@ -5,12 +5,8 @@ let isDragging = false;
 let startX, startY;
 let selectedLineIdx = null;
 
-
-
-
 function onInit() {
     renderGallery(imgs);
-
     const backToGalleryBtn = document.querySelector('.back-to-galery');
     backToGalleryBtn.addEventListener('click', () => {
         const galleryOverlay = document.querySelector('.main-gallery');
@@ -81,7 +77,7 @@ function onCanvasMouseDown(event) {
             isDragging = true;
             startX = event.offsetX;
             startY = event.offsetY;
-            selectedLineIdx = i; // Установите выбранный индекс строки
+            selectedLineIdx = i; 
             break;
         }
     }
@@ -107,14 +103,13 @@ function onCanvasMouseMove(event) {
 
 function onCanvasMouseUp() {
     isDragging = false;
-    selectedLineIdx = null; // Сбросьте выбранный индекс строки
+    selectedLineIdx = null; 
 }
 
 function isTextClicked(x, y, textLine) {
     const textSize = gCtx.measureText(textLine.text);
     const textWidth = textSize.width;
-    const textHeight = textLine.size; // Допустим, вы используете размер шрифта для высоты текстовой строки
-
+    const textHeight = textLine.size; 
     return (
         x > textLine.x && x < textLine.x + textWidth &&
         y > textLine.y - textHeight && y < textLine.y
@@ -172,7 +167,6 @@ function downloadCanvas(event, link) {
     link.href = dataURL;
 }
 
-
 function handleImageUpload(event) {
     const canvas = document.querySelector('.canvas-box');
     const ctx = canvas.getContext('2d');
@@ -184,3 +178,24 @@ function handleImageUpload(event) {
 
     img.src = URL.createObjectURL(event.target.files[0]);
 }
+
+function onAddSticker(button) {
+    const emoji = button.textContent;
+
+    const meme = getMeme();
+    const selectedLine = meme.lines[meme.selectedLineIdx];
+
+    const sticker = {
+        text: emoji,
+        size: 40,
+        font: 'Arial', // Можете настроить шрифт под ваш дизайн
+        color: 'black', // Можете настроить цвет под ваш дизайн
+        x: selectedLine.x,
+        y: selectedLine.y
+    };
+
+    meme.lines.push(sticker);
+
+    drawTextOnCanvas(meme);
+}
+
